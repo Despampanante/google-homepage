@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+
+<html>
+    <style>
+        .content {
+            color: black;
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+        }
+        .centered {
+            display:flex;
+            margin-top: 200px;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        #SearchBar {
+            padding: 12px;
+            border-radius: 22px;
+            width: 500px;
+            height: 44px;
+            font-size: 18px;
+            border-width: 1px;
+            border-color: grey;
+            outline: none;
+        }
+
+        #SearchBar:hover {
+
+            box-shadow: 1px 1px 5px grey;
+        }
+
+        #buttons {
+            padding: 15px;
+        }           
+
+        #button {
+            color: grey;
+            outline: none;
+            font-size: 18px;
+            margin: 10px;
+            padding: 5px;
+            border: 1px hidden lightgrey;
+            width: auto;
+        }
+
+        #button:hover {
+            color: black;
+            border: 1px solid lightgrey;
+            box-shadow: 1px 1px 5px lightgrey;
+        }
+        #googleLogo {
+            padding-bottom: 20px;
+            min-width: 272px;
+            height: 92px;
+            margin-bottom: 10px;
+        }
+        .topnav {
+            overflow: hidden;
+        }
+        .topnav a {
+            float: right;
+            color: black;
+            text-align: center;
+            
+            padding: 6px 10px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .topnav a:hover {
+            text-decoration: underline;
+        }
+
+        #login {
+            color: white;
+            border-radius: 5px;
+            background-color: rgb(29, 125, 252);
+        }
+
+        #squareThing {
+            width: 20px;
+        }
+
+        .footer {
+            position: fixed;
+            left: 0px;
+            right: 0px;
+            bottom: 0;
+            width: 99%;
+            background-color: whitesmoke;
+            color: grey;
+            text-align: left;
+            padding: 6px 10px;
+            font-size: 17px;
+        }
+
+        .footer span a {
+
+            padding: 6px 10px;
+            font-size: 17px;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+    <body class="content">
+            <div class="topnav">
+                <a id="login"> Login</a>
+                <a> <img id="squareThing" alt="SQAURE THING" src="data:image/jpeg;base64,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"</a>
+                <a> Images</a>
+                <a > Gmail  </a>
+            </div>
+            <div class="centered">
+
+                <img alt="Google" id="googleLogo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNzIiIGhlaWdodD0iOTIiPjxwYXRoIGZpbGw9IiNFQTQzMzUiIGQ9Ik0xMTUuNzUgNDcuMThjMCAxMi43Ny05Ljk5IDIyLjE4LTIyLjI1IDIyLjE4cy0yMi4yNS05LjQxLTIyLjI1LTIyLjE4QzcxLjI1IDM0LjMyIDgxLjI0IDI1IDkzLjUgMjVzMjIuMjUgOS4zMiAyMi4yNSAyMi4xOHptLTkuNzQgMGMwLTcuOTgtNS43OS0xMy40NC0xMi41MS0xMy40NFM4MC45OSAzOS4yIDgwLjk5IDQ3LjE4YzAgNy45IDUuNzkgMTMuNDQgMTIuNTEgMTMuNDRzMTIuNTEtNS41NSAxMi41MS0xMy40NHoiLz48cGF0aCBmaWxsPSIjRkJCQzA1IiBkPSJNMTYzLjc1IDQ3LjE4YzAgMTIuNzctOS45OSAyMi4xOC0yMi4yNSAyMi4xOHMtMjIuMjUtOS40MS0yMi4yNS0yMi4xOGMwLTEyLjg1IDkuOTktMjIuMTggMjIuMjUtMjIuMThzMjIuMjUgOS4zMiAyMi4yNSAyMi4xOHptLTkuNzQgMGMwLTcuOTgtNS43OS0xMy40NC0xMi41MS0xMy40NHMtMTIuNTEgNS40Ni0xMi41MSAxMy40NGMwIDcuOSA1Ljc5IDEzLjQ0IDEyLjUxIDEzLjQ0czEyLjUxLTUuNTUgMTIuNTEtMTMuNDR6Ii8+PHBhdGggZmlsbD0iIzQyODVGNCIgZD0iTTIwOS43NSAyNi4zNHYzOS44MmMwIDE2LjM4LTkuNjYgMjMuMDctMjEuMDggMjMuMDctMTAuNzUgMC0xNy4yMi03LjE5LTE5LjY2LTEzLjA3bDguNDgtMy41M2MxLjUxIDMuNjEgNS4yMSA3Ljg3IDExLjE3IDcuODcgNy4zMSAwIDExLjg0LTQuNTEgMTEuODQtMTN2LTMuMTloLS4zNGMtMi4xOCAyLjY5LTYuMzggNS4wNC0xMS42OCA1LjA0LTExLjA5IDAtMjEuMjUtOS42Ni0yMS4yNS0yMi4wOSAwLTEyLjUyIDEwLjE2LTIyLjI2IDIxLjI1LTIyLjI2IDUuMjkgMCA5LjQ5IDIuMzUgMTEuNjggNC45NmguMzR2LTMuNjFoOS4yNXptLTguNTYgMjAuOTJjMC03LjgxLTUuMjEtMTMuNTItMTEuODQtMTMuNTItNi43MiAwLTEyLjM1IDUuNzEtMTIuMzUgMTMuNTIgMCA3LjczIDUuNjMgMTMuMzYgMTIuMzUgMTMuMzYgNi42MyAwIDExLjg0LTUuNjMgMTEuODQtMTMuMzZ6Ii8+PHBhdGggZmlsbD0iIzM0QTg1MyIgZD0iTTIyNSAzdjY1aC05LjVWM2g5LjV6Ii8+PHBhdGggZmlsbD0iI0VBNDMzNSIgZD0iTTI2Mi4wMiA1NC40OGw3LjU2IDUuMDRjLTIuNDQgMy42MS04LjMyIDkuODMtMTguNDggOS44My0xMi42IDAtMjIuMDEtOS43NC0yMi4wMS0yMi4xOCAwLTEzLjE5IDkuNDktMjIuMTggMjAuOTItMjIuMTggMTEuNTEgMCAxNy4xNCA5LjE2IDE4Ljk4IDE0LjExbDEuMDEgMi41Mi0yOS42NSAxMi4yOGMyLjI3IDQuNDUgNS44IDYuNzIgMTAuNzUgNi43MiA0Ljk2IDAgOC40LTIuNDQgMTAuOTItNi4xNHptLTIzLjI3LTcuOThsMTkuODItOC4yM2MtMS4wOS0yLjc3LTQuMzctNC43LTguMjMtNC43LTQuOTUgMC0xMS44NCA0LjM3LTExLjU5IDEyLjkzeiIvPjxwYXRoIGZpbGw9IiM0Mjg1RjQiIGQ9Ik0zNS4yOSA0MS40MVYzMkg2N2MuMzEgMS42NC40NyAzLjU4LjQ3IDUuNjggMCA3LjA2LTEuOTMgMTUuNzktOC4xNSAyMi4wMS02LjA1IDYuMy0xMy43OCA5LjY2LTI0LjAyIDkuNjZDMTYuMzIgNjkuMzUuMzYgNTMuODkuMzYgMzQuOTEuMzYgMTUuOTMgMTYuMzIuNDcgMzUuMy40N2MxMC41IDAgMTcuOTggNC4xMiAyMy42IDkuNDlsLTYuNjQgNi42NGMtNC4wMy0zLjc4LTkuNDktNi43Mi0xNi45Ny02LjcyLTEzLjg2IDAtMjQuNyAxMS4xNy0yNC43IDI1LjAzIDAgMTMuODYgMTAuODQgMjUuMDMgMjQuNyAyNS4wMyA4Ljk5IDAgMTQuMTEtMy42MSAxNy4zOS02Ljg5IDIuNjYtMi42NiA0LjQxLTYuNDYgNS4xLTExLjY1bC0yMi40OS4wMXoiLz48L3N2Zz4=">
+
+                <input
+                     placeholder="Search Google or type a URL" type="search" id="SearchBar">
+                </input>
+                <div id="buttons">
+                    <button id="button">
+                        Search with Google!
+                    </button>
+                    <button id="button">
+                        I'm feeling Lucky!
+                    </button>
+                </div>
+            </div>
+            <div class="footer">
+                <div>
+                    <a>Argentina</a>
+                </div>
+                <hr>
+                <span >
+                    <a>Advertising</a>
+                    <a>Buisness</a>
+                    <a>About</a>
+                    <a>How Search works</a>
+                </span>
+                <span style="float: right;">
+                    <a>Privacy</a>
+                    <a>Terms</a>
+                    <a>Settings</a>
+                </span>
+                
+
+            </div>
+    </body>
+</html>
